@@ -13,8 +13,10 @@ export class TopBarComponent implements OnInit {
   constructor(private configService: ConfigService) {}
 
   ngOnInit(): void {
-    const topBar = this.configService.config?.topBar;
-    this.topBarConfig = topBar;
-    this.styles = topBar?.styles;
+    const config = this.configService.config;
+    if (config) {
+      this.topBarConfig = config.topBar;
+      this.styles = config.topBar?.styles;
+    }
   }
 }

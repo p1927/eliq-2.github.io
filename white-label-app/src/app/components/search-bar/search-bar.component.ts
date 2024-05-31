@@ -22,7 +22,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
     this.subscription = this.searchForm
       .get('searchTerm')
       ?.valueChanges.subscribe((value) => {
-        this.drinkService.filterOn.set(value);
+        this.drinkService.filterOn.next(value);
       });
   }
 

@@ -7,7 +7,7 @@ import { ConfigService } from './services/config.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  constructor(private configService: ConfigService) {}
+  constructor(public configService: ConfigService) {}
   ngOnInit(): void {
     this.configService.initializeConfig();
   }

@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {
   MatExpansionModule,
   MatGridListModule,
+  MatProgressSpinnerModule,
   MatSelectModule,
 } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,11 +17,11 @@ import { DrinkListComponent } from './components/drink-list/drink-list.component
 import { ExpansiveViewComponent } from './components/drink-list/expansive-view/expansive-view.component';
 import { InstagramViewComponent } from './components/drink-list/instagram-view/instagram-view.component';
 import { DrinksContainerComponent } from './components/drinks-container/drinks-container.component';
+import { LanguageComponent } from './components/language/language.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { ConfigService } from './services/config.service';
 import { DrinkService } from './services/drink.service';
-import { LanguageComponent } from './components/language/language.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { LanguageComponent } from './components/language/language.component';
     HttpClientModule,
     MatExpansionModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
     MatGridListModule,
     AppRoutingModule,
   ],

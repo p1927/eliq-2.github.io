@@ -1,11 +1,6 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
+import { Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/services/config.service';
 import { Drink } from '../../models/drink.model';
 import { DrinkService } from '../../services/drink.service';
@@ -15,7 +10,9 @@ import { DrinkService } from '../../services/drink.service';
   templateUrl: './drink-list.component.html',
   styleUrls: ['./drink-list.component.scss'],
 })
-export class DrinkListComponent implements OnInit {
+export class DrinkListComponent implements OnInit, OnDestroy {
+  subscription: Subscription | undefined;
+  drinks: Drink[] = [];
   filteredDrinks: Drink[] = [];
   layout: string = 'card-grid';
 
@@ -31,7 +28,11 @@ export class DrinkListComponent implements OnInit {
     }
 
     this.drinkService.getDrinks().subscribe((drinks: Drink[]) => {
+      this.drinks = drinks;
       this.filteredDrinks = drinks;
+    });
+    this.subscription = this.drinkService.filterOn.subscribe((value) => {
+      this.filterDrinks(this.drinks, value);
     });
   }
 
@@ -39,5 +40,9 @@ export class DrinkListComponent implements OnInit {
     this.filteredDrinks = drinks.filter((drink) =>
       drink.strDrink.toLowerCase().includes(term.toLowerCase())
     );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
   }
 }

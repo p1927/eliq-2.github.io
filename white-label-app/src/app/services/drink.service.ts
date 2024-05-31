@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Drink, DrinksResponse } from 'src/app/models/drink.model';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { Drink, DrinksResponse } from 'src/app/models/drink.model';
 })
 export class DrinkService {
   private apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1';
-  filterOn: WritableSignal<string> = signal('');
+  filterOn = new BehaviorSubject<string>('');
 
   constructor(private http: HttpClient) {}
 

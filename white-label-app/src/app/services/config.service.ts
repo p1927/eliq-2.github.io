@@ -10,12 +10,15 @@ export class ConfigService {
   preferredLanguage = 'EN';
   listLayout = 'card-grid';
   config: Partial<Config> = {};
+  isLoading = false;
 
   constructor(private http: HttpClient) {}
 
   initializeConfig(): void {
-    this.http
-      .get<Config>(this.configUrl)
-      .subscribe((config: Config) => (this.config = config));
+    this.isLoading = true;
+    this.http.get<Config>(this.configUrl).subscribe((config: Config) => {
+      this.isLoading = false;
+      this.config = config;
+    });
   }
 }
