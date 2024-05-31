@@ -1,0 +1,21 @@
+<div [ngSwitch]="layout">
+  <!-- Card Grid Layout -->
+  <div *ngSwitchCase="'card-grid'">
+    <app-card-view [drinks]="filteredDrinks"></app-card-view>
+  </div>
+
+  <!-- List with Expansion Panels Layout -->
+  <div *ngSwitchCase="'expansion-panel'">
+    <app-expansive-view [drinks]="filteredDrinks"></app-expansive-view>
+  </div>
+
+  <!-- Instagram Layout -->
+  <div *ngSwitchCase="'masonary'">
+    <app-instagram-view [drinks]="filteredDrinks"></app-instagram-view>
+  </div>
+
+  <!-- Default case (optional) -->
+  <div *ngSwitchDefault>
+    <app-instagram-view [drinks]="filteredDrinks"></app-instagram-view>
+  </div>
+</div>

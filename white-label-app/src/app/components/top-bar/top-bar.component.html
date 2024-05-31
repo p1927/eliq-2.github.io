@@ -1,0 +1,17 @@
+<div [ngClass]="styles.bg + ' ' + styles.text + ' ' + styles.pad">
+  <div [ngClass]="styles.cont + ' mx-auto flex justify-between items-center'">
+    <div>
+      <h1 [ngClass]="styles.title">{{ topBarConfig.title }}</h1>
+      <p [ngClass]="styles.desc">{{ topBarConfig.description }}</p>
+    </div>
+    <div>
+      <a
+        *ngFor="let link of topBarConfig.links"
+        [ngClass]="styles.link"
+        [href]="link.url"
+        >{{ link.label }}</a
+      >
+    </div>
+  </div>
+  <app-language></app-language>
+</div>

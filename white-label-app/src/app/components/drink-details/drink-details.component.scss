@@ -1,0 +1,25 @@
+.drink-details {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.drink-details img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.ingredients,
+.instructions,
+.metadata {
+  margin: 20px 0;
+}
+
+.ingredients ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredients li {
+  margin: 5px 0;
+}

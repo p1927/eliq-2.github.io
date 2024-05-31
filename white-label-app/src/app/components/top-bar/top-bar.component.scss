@@ -1,0 +1,13 @@
+.language-selector {
+  display: flex;
+  align-items: center;
+}
+
+#language-select {
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: inherit;
+}

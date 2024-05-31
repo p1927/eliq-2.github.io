@@ -1,0 +1,78 @@
+<div *ngIf="drinkDetails" class="drink-details">
+  <img [src]="drinkDetails.strDrinkThumb" alt="{{ drinkDetails.strDrink }}" />
+  <h1>{{ drinkDetails.strDrink }}</h1>
+
+  <div class="ingredients">
+    <h2>Ingredients</h2>
+    <ul>
+      <li *ngIf="drinkDetails.strIngredient1">
+        {{ drinkDetails.strIngredient1 }} - {{ drinkDetails.strMeasure1 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient2">
+        {{ drinkDetails.strIngredient2 }} - {{ drinkDetails.strMeasure2 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient3">
+        {{ drinkDetails.strIngredient3 }} - {{ drinkDetails.strMeasure3 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient4">
+        {{ drinkDetails.strIngredient4 }} - {{ drinkDetails.strMeasure4 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient5">
+        {{ drinkDetails.strIngredient5 }} - {{ drinkDetails.strMeasure5 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient6">
+        {{ drinkDetails.strIngredient6 }} - {{ drinkDetails.strMeasure6 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient7">
+        {{ drinkDetails.strIngredient7 }} - {{ drinkDetails.strMeasure7 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient8">
+        {{ drinkDetails.strIngredient8 }} - {{ drinkDetails.strMeasure8 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient9">
+        {{ drinkDetails.strIngredient9 }} - {{ drinkDetails.strMeasure9 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient10">
+        {{ drinkDetails.strIngredient10 }} - {{ drinkDetails.strMeasure10 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient11">
+        {{ drinkDetails.strIngredient11 }} - {{ drinkDetails.strMeasure11 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient12">
+        {{ drinkDetails.strIngredient12 }} - {{ drinkDetails.strMeasure12 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient13">
+        {{ drinkDetails.strIngredient13 }} - {{ drinkDetails.strMeasure13 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient14">
+        {{ drinkDetails.strIngredient14 }} - {{ drinkDetails.strMeasure14 }}
+      </li>
+      <li *ngIf="drinkDetails.strIngredient15">
+        {{ drinkDetails.strIngredient15 }} - {{ drinkDetails.strMeasure15 }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="instructions">
+    <h2>Instructions</h2>
+    <p>{{ drinkDetails.strInstructions }}</p>
+    <p *ngIf="drinkDetails.strInstructionsES">
+      Spanish: {{ drinkDetails.strInstructionsES }}
+    </p>
+    <p *ngIf="drinkDetails.strInstructionsDE">
+      German: {{ drinkDetails.strInstructionsDE }}
+    </p>
+    <p *ngIf="drinkDetails.strInstructionsFR">
+      French: {{ drinkDetails.strInstructionsFR }}
+    </p>
+    <p *ngIf="drinkDetails.strInstructionsIT">
+      Italian: {{ drinkDetails.strInstructionsIT }}
+    </p>
+  </div>
+
+  <div class="metadata">
+    <p>Category: {{ drinkDetails.strCategory }}</p>
+    <p>Glass: {{ drinkDetails.strGlass }}</p>
+    <p>Date Modified: {{ drinkDetails.dateModified }}</p>
+  </div>
+</div>

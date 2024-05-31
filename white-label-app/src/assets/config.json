@@ -1,0 +1,112 @@
+{
+  "_comment": "Possible values: 'card-grid', 'expansion-panel', 'masonry'",
+  "topBar": {
+    "logoUrl": "assets/logo.png",
+    "logoPosition": "left",
+    "title": "My Drink App",
+    "description": "Welcome to our drink app!",
+    "links": [
+      {
+        "label": "Home",
+        "url": "/"
+      },
+      {
+        "label": "About",
+        "url": "/about"
+      }
+    ],
+    "styles": {
+      "bg": "bg-gray-800",
+      "text": "text-white",
+      "pad": "p-4",
+      "cont": "container",
+      "title": "text-xl font-bold",
+      "desc": "",
+      "link": "ml-4"
+    }
+  },
+  "theme": {
+    "palette": {
+      "theme1": {
+        "primary": "blue-500",
+        "accent": "yellow-500",
+        "secondary": "green-500",
+        "tertiary": "red-500"
+      },
+      "theme2": {
+        "primary": "purple-500",
+        "accent": "orange-500",
+        "secondary": "teal-500",
+        "tertiary": "pink-500"
+      },
+      "theme3": {
+        "primary": "indigo-500",
+        "accent": "amber-500",
+        "secondary": "lime-500",
+        "tertiary": "cyan-500"
+      }
+    },
+    "selectedPalette": "theme1",
+    "fonts": {
+      "font1": "Arial, sans-serif",
+      "font2": "Georgia, serif",
+      "font3": "Roboto, sans-serif"
+    },
+    "fontSize": {
+      "small": "text-sm",
+      "medium": "text-base",
+      "large": "text-lg"
+    },
+    "selectedFont": "font1",
+    "selectedFontSize": "medium",
+    "backgroundOptions": [
+      {
+        "value": "bg-white",
+        "label": "White"
+      },
+      {
+        "value": "bg-gray-200",
+        "label": "Gray"
+      },
+      {
+        "value": "bg-gray-800",
+        "label": "Dark Gray"
+      }
+    ],
+    "selectedBackground": "bg-white"
+  },
+  "drinksList": {
+    "layoutOptions": [
+      {
+        "value": "grid",
+        "label": "Grid"
+      },
+      {
+        "value": "expansion-panel",
+        "label": "Expansion Panel"
+      },
+      {
+        "value": "masonry",
+        "label": "Instagram Layout"
+      }
+    ],
+    "selectedLayout": "grid",
+    "gridColumns": 4,
+    "expansionPanelHeight": "medium"
+  },
+  "drinkDetails": {},
+  "showAlphabets": false,
+  "alphabetPosition": "left",
+  "language": {
+    "languageDropDown": true,
+    "preferredLanguage": "EN",
+    "supportedLanguages": [
+      "EN",
+      "DE",
+      "ES",
+      "FR",
+      "IT"
+    ]
+  },
+  "searchBar": true
+}

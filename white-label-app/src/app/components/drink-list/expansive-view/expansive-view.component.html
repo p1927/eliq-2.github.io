@@ -1,0 +1,25 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let drink of drinks">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ drink.strDrink }}
+      </mat-panel-title>
+      <mat-panel-description>
+        <a [routerLink]="['/drinks', drink.idDrink]">
+          <img
+            class="w-16 h-16 object-cover rounded-lg"
+            [src]="drink.strDrinkThumb"
+            alt="{{ drink.strDrink }}"
+          />
+        </a>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="p-4">
+      <img
+        class="w-full h-auto max-h-72 object-cover mx-auto"
+        [src]="drink.strDrinkThumb"
+        alt="{{ drink.strDrink }}"
+      />
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

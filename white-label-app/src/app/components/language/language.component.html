@@ -1,0 +1,12 @@
+<div class="language-selector ml-auto">
+  <label for="language-select" class="mr-2">Language:</label>
+  <mat-select
+    id="language-select"
+    [value]="preferredLanguage"
+    (ngModelChange)="onLanguageChange($event)"
+  >
+    <option *ngFor="let language of supportedLanguages" [value]="language">
+      {{ language }}
+    </option>
+  </mat-select>
+</div>

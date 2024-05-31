@@ -1,0 +1,26 @@
+<div class="container mx-auto px-4">
+  <mat-grid-list
+    [cols]="5"
+    sm:cols="2"
+    md:cols="3"
+    lg:cols="4"
+    xl:cols="5"
+    [rowHeight]="'180px'"
+    gutterSize="16"
+  >
+    <mat-grid-tile *ngFor="let drink of drinks" [colspan]="1" [rowspan]="1">
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <a [routerLink]="['/drinks', drink.idDrink]">
+          <img
+            class="w-full h-48 object-cover"
+            [src]="drink.strDrinkThumb"
+            alt="{{ drink.strDrink }}"
+          />
+        </a>
+        <div class="p-4">
+          <h3 class="font-bold text-xl">{{ drink.strDrink }}</h3>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
