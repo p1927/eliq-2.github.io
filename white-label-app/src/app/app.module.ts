@@ -1,14 +1,12 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import {
-  MatExpansionModule,
-  MatGridListModule,
-  MatProgressSpinnerModule,
-  MatSelectModule,
-} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DrinkDetailsComponent } from './components/drink-details/drink-details.component';
@@ -38,16 +36,16 @@ import { DrinkService } from './services/drink.service';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatExpansionModule,
-    MatSelectModule,
+    FormsModule,
     MatProgressSpinnerModule,
+    MatExpansionModule,
+    ReactiveFormsModule,
+    MatSelectModule,
     MatGridListModule,
+    HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [DrinkService, ConfigService],
+  providers: [DrinkService, ConfigService, provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
