@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "white-label-app:build:production"
+              "buildTarget": "white-label-app:build:production"
             },
             "development": {
-              "browserTarget": "white-label-app:build:development"
+              "buildTarget": "white-label-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "white-label-app:build"
+            "buildTarget": "white-label-app:build"
           }
         },
         "test": {
