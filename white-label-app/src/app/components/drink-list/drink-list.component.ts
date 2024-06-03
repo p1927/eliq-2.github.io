@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { catchError, of, Subscription } from 'rxjs';
 import { ConfigService } from 'src/app/services/config.service';
@@ -12,10 +11,10 @@ import { DrinkService } from '../../services/drink.service';
   styleUrls: ['./drink-list.component.scss'],
 })
 export class DrinkListComponent implements OnInit, OnDestroy {
-  subscription: Subscription | undefined;
+  private subscription: Subscription | undefined;
   drinks: Drink[] = [];
   filteredDrinks: Drink[] = [];
-  layout: string = 'card-grid';
+  layout: string = 'grid';
 
   constructor(
     private drinkService: DrinkService,
@@ -24,11 +23,19 @@ export class DrinkListComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    const config = this.configService.config.drinksList;
-    if (config) {
-      this.layout = config.selectedLayout;
-    }
+    this.loadConfig();
+    this.loadDrinks();
+    this.subscribeToFilter();
+  }
 
+  private loadConfig(): void {
+    const drinksListConfig = this.configService.config.drinksList;
+    if (drinksListConfig) {
+      this.layout = drinksListConfig.selectedLayout;
+    }
+  }
+
+  private loadDrinks(): void {
     this.drinkService
       .getDrinks()
       .pipe(
@@ -41,14 +48,20 @@ export class DrinkListComponent implements OnInit, OnDestroy {
         this.drinks = drinks;
         this.filteredDrinks = drinks;
       });
-    this.subscription = this.drinkService.filterOn.subscribe((value) => {
-      this.filterDrinks(this.drinks, value);
-    });
   }
 
-  filterDrinks(drinks: Drink[], term: string): void {
-    this.filteredDrinks = drinks.filter((drink) =>
-      drink.strDrink.toLowerCase().includes(term.toLowerCase())
+  private subscribeToFilter(): void {
+    this.subscription = this.drinkService.filterOn.subscribe(
+      (value: string) => {
+        this.filterDrinks(value);
+      }
+    );
+  }
+
+  private filterDrinks(term: string): void {
+    const lowerCaseTerm = term.toLowerCase();
+    this.filteredDrinks = this.drinks.filter((drink) =>
+      drink.strDrink.toLowerCase().includes(lowerCaseTerm)
     );
   }
 

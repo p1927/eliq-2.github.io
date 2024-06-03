@@ -1,5 +1,4 @@
 export interface Config {
-  _comment: string;
   topBar: {
     logoUrl: string;
     logoPosition: string;
@@ -49,5 +48,4 @@ export interface Theme {
   primary: string;
   accent: string;
   secondary: string;
-  tertiary: string;
 }

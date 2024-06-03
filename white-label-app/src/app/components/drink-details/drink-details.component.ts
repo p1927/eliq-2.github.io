@@ -11,23 +11,30 @@ import { DrinkService } from '../../services/drink.service';
   styleUrls: ['./drink-details.component.scss'],
 })
 export class DrinkDetailsComponent implements OnInit {
-  drinkDetails: DrinkDetails | undefined;
   @Input() id: string = '';
   @Input() insidePanel = false;
+
+  drinkDetails: DrinkDetails | undefined;
   language!: WritableSignal<string>;
-  isLoading: boolean = false;
-  primaryColor: string = '';
-  secondaryColor: string = '';
-  accentColor: string = '';
+  isLoading = false;
+  primaryColor = '';
+  secondaryColor = '';
+  accentColor = '';
 
   constructor(
     private drinkService: DrinkService,
-    private config: ConfigService,
+    private configService: ConfigService,
     private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
     this.isLoading = true;
+    this.loadDrinkDetails();
+    this.loadConfigColors();
+    this.language = this.configService.preferredLanguage;
+  }
+
+  private loadDrinkDetails(): void {
     this.drinkService
       .getDrinkDetails(this.id)
       .pipe(
@@ -40,10 +47,11 @@ export class DrinkDetailsComponent implements OnInit {
         this.drinkDetails = details;
         this.isLoading = false;
       });
+  }
 
-    this.language = this.config.preferredLanguage;
-    this.primaryColor = this.config.primaryColor;
-    this.secondaryColor = this.config.secondaryColor;
-    this.accentColor = this.config.accentColor;
+  private loadConfigColors(): void {
+    this.primaryColor = this.configService.primaryColor;
+    this.secondaryColor = this.configService.secondaryColor;
+    this.accentColor = this.configService.accentColor;
   }
 }

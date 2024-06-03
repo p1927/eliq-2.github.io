@@ -6,7 +6,7 @@ import { Config, Theme } from '../models/config.model';
   providedIn: 'root',
 })
 export class ConfigService {
-  private configUrl = 'assets/config.json';
+  private readonly configUrl = 'assets/config.json';
   preferredLanguage = signal('EN');
   listLayout = 'card-grid';
   config: Partial<Config> = {};
@@ -26,20 +26,21 @@ export class ConfigService {
         this.preferredLanguage.set(config.language.preferredLanguage);
         this.setThemeColors(config);
       },
+      error: () => {
+        this.isLoading = false; // Handle error appropriately
+      },
     });
   }
 
-  setThemeColors(config: Config): void {
-    const selectedTheme = config.theme
+  private setThemeColors(config: Config): void {
+    const selectedPalette = config.theme
       .selectedPalette as keyof Config['theme']['palette'];
-    if (selectedTheme) {
-      this.primaryColor = (
-        config.theme.palette[selectedTheme] as Theme
-      )?.primary;
-      this.secondaryColor = (
-        config.theme.palette[selectedTheme] as Theme
-      )?.secondary;
-      this.accentColor = (config.theme.palette[selectedTheme] as Theme)?.accent;
+    const themeColors = config.theme.palette[selectedPalette] as Theme;
+
+    if (themeColors) {
+      this.primaryColor = themeColors.primary;
+      this.secondaryColor = themeColors.secondary;
+      this.accentColor = themeColors.accent;
     }
   }
 }

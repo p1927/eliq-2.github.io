@@ -9,15 +9,16 @@ import { ConfigService } from '../../services/config.service';
 export class LanguageComponent implements OnInit {
   supportedLanguages: string[] = [];
   preferredLanguage: string = 'EN';
-  constructor(private configService: ConfigService) {}
   accentColor: string = '';
+
+  constructor(private configService: ConfigService) {}
 
   ngOnInit(): void {
     this.accentColor = this.configService.accentColor;
-    const config = this.configService.config.language;
-    if (config) {
-      this.supportedLanguages = config.supportedLanguages;
-      this.preferredLanguage = config.preferredLanguage;
+    const languageConfig = this.configService.config.language;
+    if (languageConfig) {
+      this.supportedLanguages = languageConfig.supportedLanguages;
+      this.preferredLanguage = languageConfig.preferredLanguage;
     }
   }
 
