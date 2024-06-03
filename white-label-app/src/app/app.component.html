@@ -8,7 +8,7 @@
 <ng-template #content>
   <div class="app-container">
     <app-top-bar></app-top-bar>
-    <div class="content-container">
+    <div class="content-container" [style.backgroundColor]="secondaryColor">
       <router-outlet></router-outlet>
     </div>
   </div>

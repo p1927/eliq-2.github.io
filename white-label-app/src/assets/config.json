@@ -1,66 +1,35 @@
 {
-  "_comment": "Possible values: 'card-grid', 'expansion-panel', 'instagram'",
+  "_comment": "Possible layout values: 'grid', 'expansion-panel', 'instagram'",
   "topBar": {
     "title": "My Drink App",
     "description": "Welcome to our drink app!",
     "styles": {
-      "bg": "bg-blue-500",
       "text": "text-white",
       "pad": "p-4",
       "cont": "",
-      "title": "font-serif text-4xl font-bold text-blue-900 leading-tight",
+      "title": "font-serif text-4xl font-bold leading-tight",
       "desc": "text-sm"
     }
   },
   "theme": {
     "palette": {
       "theme1": {
-        "primary": "blue-500",
-        "accent": "yellow-500",
-        "secondary": "green-500",
-        "tertiary": "red-500"
+        "primary": "#E9F1FA",
+        "accent": "#00ABE4",
+        "secondary": "#FFFFFF"
       },
       "theme2": {
-        "primary": "purple-500",
-        "accent": "orange-500",
-        "secondary": "teal-500",
-        "tertiary": "pink-500"
+        "primary": "#F4EAC2",
+        "accent": "#C1A048",
+        "secondary": "#faffe2"
       },
       "theme3": {
-        "primary": "indigo-500",
-        "accent": "amber-500",
-        "secondary": "lime-500",
-        "tertiary": "cyan-500"
+        "primary": "#ffcfcf",
+        "accent": "#E7473C",
+        "secondary": "#FFFFFF"
       }
     },
-    "selectedPalette": "theme1",
-    "fonts": {
-      "font1": "Arial, sans-serif",
-      "font2": "Georgia, serif",
-      "font3": "Roboto, sans-serif"
-    },
-    "fontSize": {
-      "small": "text-sm",
-      "medium": "text-base",
-      "large": "text-lg"
-    },
-    "selectedFont": "font1",
-    "selectedFontSize": "medium",
-    "backgroundOptions": [
-      {
-        "value": "bg-white",
-        "label": "White"
-      },
-      {
-        "value": "#ffe4c4",
-        "label": "Gray"
-      },
-      {
-        "value": "bg-gray-800",
-        "label": "Dark Gray"
-      }
-    ],
-    "selectedBackground": "#ffe4c4"
+    "selectedPalette": "theme3"
   },
   "drinksList": {
     "layoutOptions": [
@@ -78,9 +47,15 @@
       }
     ],
     "selectedLayout": "expansion-panel",
-    "gridColumns": 4
+    "grid": {
+      "gridCard": {
+        "style": "background-color: light-grey; padding: 10px"
+      },
+      "gridTitle": {
+        "style": "font-size: 16px; font-weight: bold; color: #333;"
+      }
+    }
   },
-  "drinkDetails": {},
   "language": {
     "languageDropDown": true,
     "preferredLanguage": "EN",

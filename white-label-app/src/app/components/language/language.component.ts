@@ -10,8 +10,10 @@ export class LanguageComponent implements OnInit {
   supportedLanguages: string[] = [];
   preferredLanguage: string = 'EN';
   constructor(private configService: ConfigService) {}
+  accentColor: string = '';
 
   ngOnInit(): void {
+    this.accentColor = this.configService.accentColor;
     const config = this.configService.config.language;
     if (config) {
       this.supportedLanguages = config.supportedLanguages;

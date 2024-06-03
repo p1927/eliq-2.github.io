@@ -1,6 +1,10 @@
 <div
-  *ngIf="drinkDetails"
-  class="pb-4 mt-4 max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden flex flex-row"
+  *ngIf="drinkDetails && !isLoading; else loading"
+  class="pb-4 mt-4 max-w-4xl mx-auto rounded-lg shadow-md overflow-hidden flex flex-row"
+  [ngStyle]="{
+    'background-color': !insidePanel ? primaryColor : secondaryColor
+  }"
+  [style.color]="accentColor"
 >
   <div
     class="pt-4 pl-4 w-1/3 flex justify-center rounded-lg"
@@ -12,8 +16,10 @@
       class="h-80 w-80-4 object-cover rounded-lg"
     />
   </div>
-  <div class="w-2/3 p-4 items-center pb-0">
-    <h1 class="font-bold text-lg">{{ drinkDetails.strDrink }}</h1>
+  <div class="p-4 items-center pb-0" [ngClass]="{ 'w-2/3': !insidePanel }">
+    <h1 class="font-bold text-lg">
+      {{ drinkDetails.strDrink }}
+    </h1>
 
     <div class="ingredients mt-4">
       <h2 class="font-semibold">Ingredients</h2>
@@ -95,10 +101,15 @@
       </p>
     </div>
 
-    <div class="metadata mt-4 text-sm text-gray-600">
+    <div class="metadata mt-4 text-sm">
       <p>Category: {{ drinkDetails.strCategory }}</p>
       <p>Glass: {{ drinkDetails.strGlass }}</p>
       <p>Date Modified: {{ drinkDetails.dateModified }}</p>
     </div>
   </div>
 </div>
+<ng-template #loading>
+  <div class="m-auto flex items-center justify-center">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>

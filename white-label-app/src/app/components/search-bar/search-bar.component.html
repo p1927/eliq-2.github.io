@@ -1,4 +1,4 @@
-<div class="search-bar-container">
+<div class="search-bar-container" [style.color]="accentColor">
   <form [formGroup]="searchForm" class="search-form">
     <input
       matInput
@@ -6,6 +6,8 @@
       type="text"
       placeholder="Search drinks..."
       class="search-input"
+      [style.color]="accentColor"
+      [style.borderColor]="accentColor"
     />
   </form>
 </div>

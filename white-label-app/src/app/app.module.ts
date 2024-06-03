@@ -7,6 +7,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
@@ -43,6 +44,7 @@ import { DrinkService } from './services/drink.service';
     ReactiveFormsModule,
     MatCardModule,
     MatSelectModule,
+    MatSnackBarModule,
     MatInputModule,
     MatGridListModule,
     HttpClientModule,

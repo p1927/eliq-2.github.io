@@ -5,12 +5,7 @@ export interface Config {
     logoPosition: string;
     title: string;
     description: string;
-    links: {
-      label: string;
-      url: string;
-    }[];
     styles: {
-      bg: string;
       text: string;
       pad: string;
       cont: string;
@@ -26,23 +21,6 @@ export interface Config {
       theme3: Theme;
     };
     selectedPalette: string;
-    fonts: {
-      font1: string;
-      font2: string;
-      font3: string;
-    };
-    fontSize: {
-      small: string;
-      medium: string;
-      large: string;
-    };
-    selectedFont: string;
-    selectedFontSize: string;
-    backgroundOptions: {
-      value: string;
-      label: string;
-    }[];
-    selectedBackground: string;
   };
   drinksList: {
     layoutOptions: {
@@ -50,12 +28,15 @@ export interface Config {
       label: string;
     }[];
     selectedLayout: string;
-    gridColumns: number;
-    expansionPanelHeight: string;
+    grid: {
+      gridTitle: {
+        style: string;
+      };
+      gridCard: {
+        style: string;
+      };
+    };
   };
-  drinkDetails: any; // Placeholder for drink details configuration
-  showAlphabets: boolean;
-  alphabetPosition: string;
   language: {
     languageDropDown: boolean;
     preferredLanguage: string;

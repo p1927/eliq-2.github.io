@@ -3,6 +3,7 @@
     <mat-expansion-panel
       *ngFor="let drink of drinks"
       class="mat-elevation-z0 mb-2 expansion-card h-fit"
+      [style.backgroundColor]="primaryColor"
     >
       <mat-expansion-panel-header class="header" [expandedHeight]="'250px'">
         <mat-panel-title class="flex items-center">
@@ -13,7 +14,9 @@
           />
         </mat-panel-title>
         <mat-panel-description>
-          <span class="description">{{ drink.strDrink }}</span>
+          <span class="description" [style.color]="accentColor">{{
+            drink.strDrink
+          }}</span>
         </mat-panel-description>
       </mat-expansion-panel-header>
       <ng-template matExpansionPanelContent>

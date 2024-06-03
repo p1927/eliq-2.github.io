@@ -1,5 +1,10 @@
-<div class="language-selector">
+<div
+  class="language-selector"
+  [style.color]="accentColor"
+  [style.borderColor]="accentColor"
+>
   <mat-select
+    [style.color]="accentColor"
     id="language-select"
     [(value)]="preferredLanguage"
     (selectionChange)="onLanguageChange($event)"

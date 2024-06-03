@@ -1,25 +1,27 @@
 <header
   class="header-horizontal"
-  [ngClass]="[
-    topBar.styles.bg,
-    topBar.styles.text,
-    topBar.styles.pad,
-    topBar.styles.cont
-  ]"
+  [ngClass]="[styles.text, styles.pad, styles.cont]"
+  [style.backgroundColor]="primaryColor"
 >
   <div class="logo-title-description">
     <div class="title-description">
-      <h1 class="title" [ngClass]="topBar.styles.title">{{ topBar.title }}</h1>
-      <p class="description" [ngClass]="topBar.styles.desc">
+      <h1 class="title" [ngClass]="styles.title" [style.color]="accentColor">
+        {{ topBar.title }}
+      </h1>
+      <p
+        class="description"
+        [ngClass]="styles.desc"
+        [style.color]="accentColor"
+      >
         {{ topBar.description }}
       </p>
     </div>
   </div>
 
-  <div class="search-bar">
+  <div class="search-bar" *ngIf="showSearchBar">
     <app-search-bar></app-search-bar>
   </div>
-  <div class="language-selector">
+  <div class="language-selector" *ngIf="showLanguageSelection">
     <app-language></app-language>
   </div>
 </header>

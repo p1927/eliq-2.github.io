@@ -7,8 +7,10 @@ import { ConfigService } from './services/config.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  secondaryColor: string = '';
   constructor(public configService: ConfigService) {}
   ngOnInit(): void {
     this.configService.initializeConfig();
+    this.secondaryColor = this.configService.secondaryColor;
   }
 }

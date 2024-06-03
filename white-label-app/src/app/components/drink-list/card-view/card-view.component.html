@@ -3,9 +3,13 @@
     class="drink-card"
     *ngFor="let drink of drinks"
     [routerLink]="['/drinks', drink.idDrink]"
+    [style]="gridCardStyle"
+    [style.backgroundColor]="primaryColor"
   >
     <img class="image" [src]="drink.strDrinkThumb" [alt]="drink.strDrink" />
 
-    <h3 class="pl-2">{{ drink.strDrink }}</h3>
+    <h3 class="pl-2" [style]="gridTitleStyle" [style.color]="accentColor">
+      {{ drink.strDrink }}
+    </h3>
   </div>
 </div>
