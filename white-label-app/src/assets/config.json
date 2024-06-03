@@ -45,7 +45,7 @@
         "label": "Instagram Layout"
       }
     ],
-    "selectedLayout": "grid",
+    "selectedLayout": "expansion-panel",
     "grid": {
       "gridCard": {
         "style": "background-color: light-grey; padding: 10px"
