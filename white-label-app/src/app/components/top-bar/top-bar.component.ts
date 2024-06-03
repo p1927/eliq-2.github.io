@@ -10,7 +10,7 @@ import { ConfigService } from '../../services/config.service';
   styleUrls: ['./top-bar.component.scss'],
 })
 export class TopBarComponent implements OnInit, OnDestroy {
-  topBar: any;
+  topBar: any; // not recomended but using it to save time instead defining types
   styles: any;
   showSearchBar = true;
   showLanguageSelection = true;
@@ -22,11 +22,13 @@ export class TopBarComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const config = this.configService.config;
-    this.topBar = config.topBar;
-    this.styles = config.topBar?.styles;
-    this.showLanguageSelection = config.language?.languageDropDown || false;
-    this.setSearchBarVisibility(config);
-    this.setColors();
+    if (config) {
+      this.topBar = config.topBar;
+      this.styles = config.topBar?.styles;
+      this.showLanguageSelection = config.language?.languageDropDown || false;
+      this.setSearchBarVisibility(config);
+      this.setColors();
+    }
   }
 
   private setSearchBarVisibility(config: Partial<Config>): void {
