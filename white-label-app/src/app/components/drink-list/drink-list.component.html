@@ -1,6 +1,14 @@
+<div *ngIf="filteredDrinks.length == 0">
+  <div class="flex items-center justify-center h-64">
+    <div class="bg-gray-50 text-gray-700 py-4 px-8 rounded-lg text-center">
+      No drinks matched with filter
+    </div>
+  </div>
+</div>
+
 <div [ngSwitch]="layout">
   <!-- Card Grid Layout -->
-  <div *ngSwitchCase="'card-grid'">
+  <div *ngSwitchCase="'grid'">
     <app-card-view [drinks]="filteredDrinks"></app-card-view>
   </div>
 
@@ -10,7 +18,7 @@
   </div>
 
   <!-- Instagram Layout -->
-  <div *ngSwitchCase="'masonary'">
+  <div *ngSwitchCase="'instagram'">
     <app-instagram-view [drinks]="filteredDrinks"></app-instagram-view>
   </div>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConfigService } from '../../services/config.service';
 
 @Component({
@@ -7,15 +8,15 @@ import { ConfigService } from '../../services/config.service';
   styleUrls: ['./top-bar.component.scss'],
 })
 export class TopBarComponent implements OnInit {
-  topBarConfig: any;
+  topBar: any;
   styles: any;
 
-  constructor(private configService: ConfigService) {}
+  constructor(private configService: ConfigService, private router: Router) {}
 
   ngOnInit(): void {
     const config = this.configService.config;
     if (config) {
-      this.topBarConfig = config.topBar;
+      this.topBar = config.topBar;
       this.styles = config.topBar?.styles;
     }
   }

@@ -1,78 +1,104 @@
-<div *ngIf="drinkDetails" class="drink-details">
-  <img [src]="drinkDetails.strDrinkThumb" alt="{{ drinkDetails.strDrink }}" />
-  <h1>{{ drinkDetails.strDrink }}</h1>
-
-  <div class="ingredients">
-    <h2>Ingredients</h2>
-    <ul>
-      <li *ngIf="drinkDetails.strIngredient1">
-        {{ drinkDetails.strIngredient1 }} - {{ drinkDetails.strMeasure1 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient2">
-        {{ drinkDetails.strIngredient2 }} - {{ drinkDetails.strMeasure2 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient3">
-        {{ drinkDetails.strIngredient3 }} - {{ drinkDetails.strMeasure3 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient4">
-        {{ drinkDetails.strIngredient4 }} - {{ drinkDetails.strMeasure4 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient5">
-        {{ drinkDetails.strIngredient5 }} - {{ drinkDetails.strMeasure5 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient6">
-        {{ drinkDetails.strIngredient6 }} - {{ drinkDetails.strMeasure6 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient7">
-        {{ drinkDetails.strIngredient7 }} - {{ drinkDetails.strMeasure7 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient8">
-        {{ drinkDetails.strIngredient8 }} - {{ drinkDetails.strMeasure8 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient9">
-        {{ drinkDetails.strIngredient9 }} - {{ drinkDetails.strMeasure9 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient10">
-        {{ drinkDetails.strIngredient10 }} - {{ drinkDetails.strMeasure10 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient11">
-        {{ drinkDetails.strIngredient11 }} - {{ drinkDetails.strMeasure11 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient12">
-        {{ drinkDetails.strIngredient12 }} - {{ drinkDetails.strMeasure12 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient13">
-        {{ drinkDetails.strIngredient13 }} - {{ drinkDetails.strMeasure13 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient14">
-        {{ drinkDetails.strIngredient14 }} - {{ drinkDetails.strMeasure14 }}
-      </li>
-      <li *ngIf="drinkDetails.strIngredient15">
-        {{ drinkDetails.strIngredient15 }} - {{ drinkDetails.strMeasure15 }}
-      </li>
-    </ul>
+<div
+  *ngIf="drinkDetails"
+  class="pb-4 mt-4 max-w-4xl mx-auto bg-white rounded-lg shadow-md overflow-hidden flex flex-row"
+>
+  <div
+    class="pt-4 pl-4 w-1/3 flex justify-center rounded-lg"
+    *ngIf="!insidePanel"
+  >
+    <img
+      [src]="drinkDetails.strDrinkThumb"
+      alt="{{ drinkDetails.strDrink }}"
+      class="h-80 w-80-4 object-cover rounded-lg"
+    />
   </div>
+  <div class="w-2/3 p-4 items-center pb-0">
+    <h1 class="font-bold text-lg">{{ drinkDetails.strDrink }}</h1>
 
-  <div class="instructions">
-    <h2>Instructions</h2>
-    <p>{{ drinkDetails.strInstructions }}</p>
-    <p *ngIf="drinkDetails.strInstructionsES">
-      Spanish: {{ drinkDetails.strInstructionsES }}
-    </p>
-    <p *ngIf="drinkDetails.strInstructionsDE">
-      German: {{ drinkDetails.strInstructionsDE }}
-    </p>
-    <p *ngIf="drinkDetails.strInstructionsFR">
-      French: {{ drinkDetails.strInstructionsFR }}
-    </p>
-    <p *ngIf="drinkDetails.strInstructionsIT">
-      Italian: {{ drinkDetails.strInstructionsIT }}
-    </p>
-  </div>
+    <div class="ingredients mt-4">
+      <h2 class="font-semibold">Ingredients</h2>
+      <ul class="list-disc list-inside">
+        <li *ngIf="drinkDetails.strIngredient1">
+          {{ drinkDetails.strIngredient1 }} - {{ drinkDetails.strMeasure1 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient2">
+          {{ drinkDetails.strIngredient2 }} - {{ drinkDetails.strMeasure2 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient3">
+          {{ drinkDetails.strIngredient3 }} - {{ drinkDetails.strMeasure3 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient4">
+          {{ drinkDetails.strIngredient4 }} - {{ drinkDetails.strMeasure4 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient5">
+          {{ drinkDetails.strIngredient5 }} - {{ drinkDetails.strMeasure5 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient6">
+          {{ drinkDetails.strIngredient6 }} - {{ drinkDetails.strMeasure6 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient7">
+          {{ drinkDetails.strIngredient7 }} - {{ drinkDetails.strMeasure7 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient8">
+          {{ drinkDetails.strIngredient8 }} - {{ drinkDetails.strMeasure8 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient9">
+          {{ drinkDetails.strIngredient9 }} - {{ drinkDetails.strMeasure9 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient10">
+          {{ drinkDetails.strIngredient10 }} - {{ drinkDetails.strMeasure10 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient11">
+          {{ drinkDetails.strIngredient11 }} - {{ drinkDetails.strMeasure11 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient12">
+          {{ drinkDetails.strIngredient12 }} - {{ drinkDetails.strMeasure12 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient13">
+          {{ drinkDetails.strIngredient13 }} - {{ drinkDetails.strMeasure13 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient14">
+          {{ drinkDetails.strIngredient14 }} - {{ drinkDetails.strMeasure14 }}
+        </li>
+        <li *ngIf="drinkDetails.strIngredient15">
+          {{ drinkDetails.strIngredient15 }} - {{ drinkDetails.strMeasure15 }}
+        </li>
+      </ul>
+    </div>
 
-  <div class="metadata">
-    <p>Category: {{ drinkDetails.strCategory }}</p>
-    <p>Glass: {{ drinkDetails.strGlass }}</p>
-    <p>Date Modified: {{ drinkDetails.dateModified }}</p>
+    <div class="instructions mt-4">
+      <h2 class="font-semibold">Instructions</h2>
+      <p>{{ drinkDetails.strInstructions }}</p>
+      <p
+        *ngIf="drinkDetails.strInstructionsES"
+        [ngClass]="{ bold: language() === 'ES' }"
+      >
+        Spanish: {{ drinkDetails.strInstructionsES }}
+      </p>
+      <p
+        *ngIf="drinkDetails.strInstructionsDE"
+        [ngClass]="{ bold: language() === 'DE' }"
+      >
+        German: {{ drinkDetails.strInstructionsDE }}
+      </p>
+      <p
+        *ngIf="drinkDetails.strInstructionsFR"
+        [ngClass]="{ bold: language() === 'FR' }"
+      >
+        French: {{ drinkDetails.strInstructionsFR }}
+      </p>
+      <p
+        *ngIf="drinkDetails.strInstructionsIT"
+        [ngClass]="{ bold: language() === 'IT' }"
+      >
+        Italian: {{ drinkDetails.strInstructionsIT }}
+      </p>
+    </div>
+
+    <div class="metadata mt-4 text-sm text-gray-600">
+      <p>Category: {{ drinkDetails.strCategory }}</p>
+      <p>Glass: {{ drinkDetails.strGlass }}</p>
+      <p>Date Modified: {{ drinkDetails.dateModified }}</p>
+    </div>
   </div>
 </div>

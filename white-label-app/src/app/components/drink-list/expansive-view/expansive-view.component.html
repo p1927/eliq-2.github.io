@@ -1,25 +1,29 @@
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let drink of drinks">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        {{ drink.strDrink }}
-      </mat-panel-title>
-      <mat-panel-description>
-        <a [routerLink]="['/drinks', drink.idDrink]">
+<div class="container mx-auto p-4">
+  <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+    <mat-expansion-panel
+      *ngFor="let drink of drinks"
+      class="mat-elevation-z0 mb-2 expansion-card h-fit"
+    >
+      <mat-expansion-panel-header class="header" [expandedHeight]="'250px'">
+        <mat-panel-title class="flex items-center">
           <img
-            class="w-16 h-16 object-cover rounded-lg"
+            class="rounded-lg mr-4"
             [src]="drink.strDrinkThumb"
             alt="{{ drink.strDrink }}"
           />
-        </a>
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="p-4">
-      <img
-        class="w-full h-auto max-h-72 object-cover mx-auto"
-        [src]="drink.strDrinkThumb"
-        alt="{{ drink.strDrink }}"
-      />
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
+        </mat-panel-title>
+        <mat-panel-description>
+          <span class="description">{{ drink.strDrink }}</span>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
+        <div class="p-4">
+          <app-drink-details
+            [insidePanel]="true"
+            [id]="drink.idDrink"
+          ></app-drink-details>
+        </div>
+      </ng-template>
+    </mat-expansion-panel>
+  </div>
+</div>

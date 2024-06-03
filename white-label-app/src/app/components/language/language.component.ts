@@ -20,6 +20,6 @@ export class LanguageComponent implements OnInit {
   }
 
   onLanguageChange(event: any): void {
-    this.configService.preferredLanguage = event.target.value;
+    this.configService.preferredLanguage.set(event.value);
   }
 }

@@ -13,3 +13,21 @@ img {
   width: auto;
   height: auto;
 }
+
+.expansion-card {
+  width: 100%;
+  background-color: rgb(241, 185, 185);
+}
+
+.header {
+  height: 250px;
+}
+
+.description {
+  font-size: 20px;
+  color: black;
+}
+
+mat-panel-description {
+  justify-content: left;
+}

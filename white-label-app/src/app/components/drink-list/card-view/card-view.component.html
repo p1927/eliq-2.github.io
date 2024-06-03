@@ -1,21 +1,11 @@
-<div class="container mx-auto px-4">
+<div class="flex flex-wrap justify-center">
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6"
+    class="drink-card"
+    *ngFor="let drink of drinks"
+    [routerLink]="['/drinks', drink.idDrink]"
   >
-    <div
-      *ngFor="let drink of drinks"
-      class="bg-white rounded-lg shadow-md overflow-hidden"
-    >
-      <a [routerLink]="['/drinks', drink.idDrink]">
-        <img
-          class="w-full h-48 object-cover"
-          [src]="drink.strDrinkThumb"
-          alt="{{ drink.strDrink }}"
-        />
-      </a>
-      <div class="p-4">
-        <h3 class="font-bold text-xl">{{ drink.strDrink }}</h3>
-      </div>
-    </div>
+    <img class="image" [src]="drink.strDrinkThumb" [alt]="drink.strDrink" />
+
+    <h3 class="pl-2">{{ drink.strDrink }}</h3>
   </div>
 </div>

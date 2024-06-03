@@ -1,28 +1,15 @@
 {
-  "_comment": "Possible values: 'card-grid', 'expansion-panel', 'masonry'",
+  "_comment": "Possible values: 'card-grid', 'expansion-panel', 'instagram'",
   "topBar": {
-    "logoUrl": "assets/logo.png",
-    "logoPosition": "left",
     "title": "My Drink App",
     "description": "Welcome to our drink app!",
-    "links": [
-      {
-        "label": "Home",
-        "url": "/"
-      },
-      {
-        "label": "About",
-        "url": "/about"
-      }
-    ],
     "styles": {
-      "bg": "bg-gray-800",
+      "bg": "bg-blue-500",
       "text": "text-white",
       "pad": "p-4",
-      "cont": "container",
-      "title": "text-xl font-bold",
-      "desc": "",
-      "link": "ml-4"
+      "cont": "",
+      "title": "font-serif text-4xl font-bold text-blue-900 leading-tight",
+      "desc": "text-sm"
     }
   },
   "theme": {
@@ -65,7 +52,7 @@
         "label": "White"
       },
       {
-        "value": "bg-gray-200",
+        "value": "#ffe4c4",
         "label": "Gray"
       },
       {
@@ -73,7 +60,7 @@
         "label": "Dark Gray"
       }
     ],
-    "selectedBackground": "bg-white"
+    "selectedBackground": "#ffe4c4"
   },
   "drinksList": {
     "layoutOptions": [
@@ -86,17 +73,14 @@
         "label": "Expansion Panel"
       },
       {
-        "value": "masonry",
+        "value": "instagram",
         "label": "Instagram Layout"
       }
     ],
-    "selectedLayout": "grid",
-    "gridColumns": 4,
-    "expansionPanelHeight": "medium"
+    "selectedLayout": "expansion-panel",
+    "gridColumns": 4
   },
   "drinkDetails": {},
-  "showAlphabets": false,
-  "alphabetPosition": "left",
   "language": {
     "languageDropDown": true,
     "preferredLanguage": "EN",

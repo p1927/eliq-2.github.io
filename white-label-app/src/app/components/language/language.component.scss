@@ -1,0 +1,11 @@
+.language-selector {
+  width: 70px;
+  padding: 1px 10px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 1rem;
+  mat-option {
+    width: 100%;
+  }
+}

@@ -21,6 +21,6 @@ export class DrinkService {
   getDrinkDetails(id: string): Observable<Drink> {
     return this.http
       .get<any>(`${this.apiUrl}/lookup.php?i=${id}`)
-      .pipe(map((response) => response.drinks[0]));
+      .pipe(map((response) => response?.drinks?.[0]));
   }
 }
