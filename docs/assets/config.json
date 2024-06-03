@@ -1,0 +1,70 @@
+{
+  "_comment": "Possible layout values: 'grid', 'expansion-panel', 'instagram'",
+  "topBar": {
+    "title": "My Drink App",
+    "description": "Welcome to our drink app!",
+    "styles": {
+      "pad": "p-4",
+      "cont": "",
+      "title": "text-4xl font-bold leading-tight",
+      "desc": "text-sm"
+    }
+  },
+  "theme": {
+    "palette": {
+      "theme1": {
+        "primary": "#E9F1FA",
+        "accent": "#00ABE4",
+        "secondary": "#FFFFFF"
+      },
+      "theme2": {
+        "primary": "#F4EAC2",
+        "accent": "#C1A048",
+        "secondary": "#faffe2"
+      },
+      "theme3": {
+        "primary": "#ffcfcf",
+        "accent": "#E7473C",
+        "secondary": "#FFFFFF"
+      }
+    },
+    "selectedPalette": "theme1"
+  },
+  "drinksList": {
+    "layoutOptions": [
+      {
+        "value": "grid",
+        "label": "Grid"
+      },
+      {
+        "value": "expansion-panel",
+        "label": "Expansion Panel"
+      },
+      {
+        "value": "instagram",
+        "label": "Instagram Layout"
+      }
+    ],
+    "selectedLayout": "expansion-panel",
+    "grid": {
+      "gridCard": {
+        "style": "background-color: light-grey; padding: 10px"
+      },
+      "gridTitle": {
+        "style": "font-size: 16px; font-weight: bold; color: #333;"
+      }
+    }
+  },
+  "language": {
+    "languageDropDown": true,
+    "preferredLanguage": "EN",
+    "supportedLanguages": [
+      "EN",
+      "DE",
+      "ES",
+      "FR",
+      "IT"
+    ]
+  },
+  "searchBar": true
+}
